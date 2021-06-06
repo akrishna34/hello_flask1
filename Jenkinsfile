@@ -7,10 +7,10 @@ pipeline {
     stages {
         stage('Clone Repository') {
             options {
-            timeout(time: 30, unit: 'MINUTES')   // timeout on whole pipeline job
+            timeout(time: 1, unit: 'MINUTES')   // timeout on whole pipeline job
         }
             steps {
-                checkout SCM
+                try { checkout SCM } catch(caughtError) { deleteDir(); checkout SCM }
             }
         }
         stage('Build') {
