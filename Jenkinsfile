@@ -1,8 +1,14 @@
 pipeline {
     agent any
+    options {
+        timeout(time: 30, unit: 'SECONDS')   // timeout on whole pipeline job
+    }
 
     stages {
         stage('Clone Repository') {
+            options {
+            timeout(time: 30, unit: 'SECONDS')   // timeout on whole pipeline job
+        }
             steps {
                 checkout SCM
             }
