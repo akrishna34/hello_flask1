@@ -10,13 +10,10 @@ pipeline {
             timeout(time: 1, unit: 'MINUTES')   // timeout on whole pipeline job
         }
             steps {
-                try {
-                    checkout SCM
-                    }
-                catch(caughtError) {
-                    deleteDir();
-                    checkout SCM
-                    }
+
+                checkout SCM
+
+
             }
         }
         stage('Build') {
