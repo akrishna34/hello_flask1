@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                sh 'git clone https://github.com/akrishna34/hello_flask_.git'
+                checkout SCM
             }
         }
         stage('Build') {
