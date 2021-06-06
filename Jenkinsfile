@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             options {
-            timeout(time: 30, unit: 'SECONDS')   // timeout on whole pipeline job
+            timeout(time: 30, unit: 'MINUTES')   // timeout on whole pipeline job
         }
             steps {
                 checkout SCM
