@@ -11,7 +11,7 @@ pipeline {
         }
             steps {
 
-                checkout SCM
+                ```checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akrishna34/hello_flask1.git']]]```
 
 
             }
